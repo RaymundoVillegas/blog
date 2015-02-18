@@ -11,6 +11,6 @@ if($query){
     echo "<p>Succesfully created table: posts</p>";
 }
 else{
-    echo "<p>" . $_SESSION["connection"]->error ."</p>";
+    echo "<p>" . $_SESSION["connection"]->error . "</p>";
 }
 
