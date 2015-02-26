@@ -52,8 +52,14 @@ class Database {
 
         $query = $this->connection->query($string);
 
-        $this->closeConnection();
+        
 
+        if(!$query){
+            $this->error = $this->connection->error;
+        }
+        
+        
+        $this->closeConnection();
         return $query;
     }
 
