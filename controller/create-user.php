@@ -10,9 +10,9 @@ $salt = "$5$" . "rounds=5000$" . uniqid(mt_rand(), true) . "$";
 $hashedPassword = crypt($password, $salt);
 
 $query = $_SESSION["connection"]->query("INSERT INTO user SET "
-        . "email = '$email, "
+        . "email = '$email', "
         . "username = '$username', "
-        . "password = '$password', "
+        . "password = '$hashedPassword', "
         . "salt = '$salt'");
 
 if($query){
