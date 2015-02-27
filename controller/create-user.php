@@ -14,10 +14,11 @@ $query = $_SESSION["connection"]->query("INSERT INTO user SET "
         . "username = '$username', "
         . "password = '$hashedPassword', "
         . "salt = '$salt'");
-
+//This will show up if succesfully created username
 if($query){
     echo "Succesfully created user:$username";
 }
+//if not it will show up as an error
 else{
     echo "<p>" . $_SESSION["connection"]->error . "</p>";
 }
